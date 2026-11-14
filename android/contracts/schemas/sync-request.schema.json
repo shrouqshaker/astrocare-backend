@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astrocare.dev/schemas/sync-request.schema.json",
+  "title": "SyncBatchRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "batchId",
+    "astronautId",
+    "deviceId",
+    "sentAt",
+    "clientRuleSetVersion",
+    "items"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "batchId": {
+      "$ref": "common.schema.json#/$defs/uuid"
+    },
+    "astronautId": {
+      "$ref": "common.schema.json#/$defs/astronautId"
+    },
+    "deviceId": {
+      "$ref": "common.schema.json#/$defs/uuid"
+    },
+    "sentAt": {
+      "$ref": "common.schema.json#/$defs/utcDateTime"
+    },
+    "clientRuleSetVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "measurements",
+        "symptomCheckins",
+        "alerts"
+      ],
+      "properties": {
+        "measurements": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "$ref": "measurement.schema.json"
+          }
+        },
+        "symptomCheckins": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "$ref": "symptom-checkin.schema.json"
+          }
+        },
+        "alerts": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "$ref": "alert.schema.json"
+          }
+        }
+      }
+    }
+  }
+}

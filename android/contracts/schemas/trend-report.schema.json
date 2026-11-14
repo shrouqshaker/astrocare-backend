@@ -1,0 +1,286 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astrocare.dev/schemas/trend-report.schema.json",
+  "title": "TrendReport",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "astronautId",
+    "generatedAt",
+    "generatedBy",
+    "ruleSetVersion",
+    "window",
+    "metrics",
+    "insights"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "astronautId": {
+      "$ref": "common.schema.json#/$defs/astronautId"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/utcDateTime"
+    },
+    "generatedBy": {
+      "enum": [
+        "android_local",
+        "python_reference",
+        "backend_optional"
+      ]
+    },
+    "ruleSetVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to",
+        "days",
+        "utcOffsetMinutes"
+      ],
+      "properties": {
+        "from": {
+          "$ref": "common.schema.json#/$defs/localDate"
+        },
+        "to": {
+          "$ref": "common.schema.json#/$defs/localDate"
+        },
+        "days": {
+          "const": 7
+        },
+        "utcOffsetMinutes": {
+          "$ref": "common.schema.json#/$defs/utcOffsetMinutes"
+        }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/metricTrend"
+      }
+    },
+    "insights": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/insight"
+      }
+    }
+  },
+  "$defs": {
+    "metricTrend": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metric",
+        "baseline",
+        "fields"
+      ],
+      "properties": {
+        "metric": {
+          "$ref": "common.schema.json#/$defs/metric"
+        },
+        "baseline": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "available",
+            "windowDays",
+            "sampleCount",
+            "distinctDays",
+            "reason"
+          ],
+          "properties": {
+            "available": {
+              "type": "boolean"
+            },
+            "windowDays": {
+              "type": "integer"
+            },
+            "sampleCount": {
+              "type": "integer"
+            },
+            "distinctDays": {
+              "type": "integer"
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "unit",
+              "latest",
+              "latestAt",
+              "weekMean",
+              "baselineMean",
+              "baselineSd",
+              "deltaVsBaseline",
+              "direction",
+              "points"
+            ],
+            "properties": {
+              "field": {
+                "$ref": "common.schema.json#/$defs/fieldKey"
+              },
+              "unit": {
+                "$ref": "common.schema.json#/$defs/unit"
+              },
+              "latest": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "latestAt": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "weekMean": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "baselineMean": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "baselineSd": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "deltaVsBaseline": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "direction": {
+                "enum": [
+                  "up",
+                  "down",
+                  "stable",
+                  "insufficient_data"
+                ]
+              },
+              "points": {
+                "type": "array",
+                "minItems": 7,
+                "maxItems": 7,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "date",
+                    "count",
+                    "min",
+                    "mean",
+                    "max"
+                  ],
+                  "properties": {
+                    "date": {
+                      "$ref": "common.schema.json#/$defs/localDate"
+                    },
+                    "count": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "min": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "mean": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "max": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "insight": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "ruleId",
+        "ruleRevision",
+        "severity",
+        "metric",
+        "text",
+        "evidence",
+        "generatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ruleId": {
+          "type": "string"
+        },
+        "ruleRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning"
+          ]
+        },
+        "metric": {
+          "$ref": "common.schema.json#/$defs/metric"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 300
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "common.schema.json#/$defs/evidence"
+          }
+        },
+        "generatedAt": {
+          "$ref": "common.schema.json#/$defs/utcDateTime"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "astronautId": "demo-astronaut-01",
+  "deviceId": "ed5237ad-a83d-4c74-9d54-393306d09dae",
+  "environment": "iss",
+  "language": "en",
+  "loadedRuleSetVersion": "1.0.0",
+  "reminders": [
+    {
+      "id": "b617a075-c915-4328-a1db-34f66a8c01de",
+      "label": "Morning vitals",
+      "target": "all",
+      "time": "08:00",
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "enabled": true
+    }
+  ],
+  "sync": {
+    "enabled": true,
+    "baseUrl": "http://10.0.2.2:3000",
+    "apiKey": "demo-only",
+    "wifiOnly": false,
+    "intervalMinutes": 15,
+    "lastSyncAt": null,
+    "lastSyncResult": "never"
+  }
+}

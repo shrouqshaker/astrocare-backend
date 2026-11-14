@@ -1,0 +1,136 @@
+{
+  "contractVersion": "1.0.0",
+  "schemaVersion": "1.0",
+  "metrics": {
+    "heart_rate": {
+      "label": "Heart rate",
+      "fields": {
+        "bpm": {
+          "unit": "bpm",
+          "min": 20,
+          "max": 250,
+          "type": "integer"
+        }
+      }
+    },
+    "blood_pressure": {
+      "label": "Blood pressure",
+      "fields": {
+        "systolic": {
+          "unit": "mmHg",
+          "min": 50,
+          "max": 260,
+          "type": "integer"
+        },
+        "diastolic": {
+          "unit": "mmHg",
+          "min": 30,
+          "max": 160,
+          "type": "integer"
+        }
+      },
+      "crossFieldRule": "systolic > diastolic"
+    },
+    "spo2": {
+      "label": "SpO2",
+      "fields": {
+        "percent": {
+          "unit": "percent",
+          "min": 50,
+          "max": 100,
+          "type": "number"
+        }
+      }
+    },
+    "temperature": {
+      "label": "Temperature",
+      "fields": {
+        "celsius": {
+          "unit": "celsius",
+          "min": 30,
+          "max": 43,
+          "type": "number"
+        }
+      }
+    },
+    "sleep": {
+      "label": "Sleep",
+      "fields": {
+        "hours": {
+          "unit": "hours",
+          "min": 0,
+          "max": 24,
+          "type": "number"
+        },
+        "quality": {
+          "unit": "score",
+          "min": 1,
+          "max": 5,
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "fieldLabels": {
+    "heart_rate.bpm": "heart rate",
+    "blood_pressure.systolic": "systolic pressure",
+    "blood_pressure.diastolic": "diastolic pressure",
+    "spo2.percent": "SpO2",
+    "temperature.celsius": "temperature",
+    "sleep.hours": "sleep duration",
+    "sleep.quality": "sleep quality",
+    "symptom.chest_pain": "chest pain",
+    "symptom.dizziness": "dizziness",
+    "symptom.shortness_of_breath": "shortness of breath"
+  },
+  "unitDisplay": {
+    "bpm": "bpm",
+    "mmHg": "mmHg",
+    "percent": "%",
+    "celsius": "°C",
+    "hours": "h",
+    "score": "/5",
+    "flag": ""
+  },
+  "symptoms": [
+    "chest_pain",
+    "dizziness",
+    "shortness_of_breath",
+    "none"
+  ],
+  "environments": [
+    {
+      "id": "iss",
+      "label": "International Space Station"
+    },
+    {
+      "id": "spacecraft",
+      "label": "Spacecraft (transit)"
+    },
+    {
+      "id": "moon_base",
+      "label": "Moon Base"
+    }
+  ],
+  "alertLevels": [
+    "warning",
+    "critical"
+  ],
+  "overallStatus": [
+    "normal",
+    "warning",
+    "critical",
+    "insufficient_data"
+  ],
+  "sources": [
+    "manual",
+    "synthetic"
+  ],
+  "localSyncStatus": [
+    "pending",
+    "synced",
+    "rejected"
+  ],
+  "defaultAstronautId": "demo-astronaut-01",
+  "disclaimer": "AstroCare provides general decision support only. It does not diagnose or treat any condition and does not replace a flight surgeon or qualified medical professional."
+}

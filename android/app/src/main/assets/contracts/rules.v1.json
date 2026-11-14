@@ -1,0 +1,640 @@
+{
+  "schemaVersion": "1.0",
+  "ruleSetVersion": "1.0.0",
+  "effectiveFrom": "2026-10-12",
+  "disclaimer": "AstroCare provides general decision support only. It does not diagnose or treat any condition and does not replace a flight surgeon or qualified medical professional.",
+  "evaluation": {
+    "trigger": "on_save_of_measurement_or_symptom_checkin",
+    "contextPolicy": "latest valid measurement per metric + latest symptom check-in, each only if within contextWindowMinutes",
+    "contextWindowMinutes": 1440,
+    "groupPolicy": "within one group only the highest-level firing alert is emitted",
+    "dedupe": "do not create an alert if an alert with the same ruleId and identical triggeredBy ids already exists",
+    "maxEvaluationMillis": 1000,
+    "defaultExplanationTemplate": "Rule {ruleId} triggered: {e0.label} = {e0.observed} {e0.unit} ({e0.comparator} {e0.threshold} {e0.unit}).",
+    "templatePlaceholders": [
+      "ruleId",
+      "e{N}.label",
+      "e{N}.observed",
+      "e{N}.threshold",
+      "e{N}.unit",
+      "e{N}.comparator",
+      "e{N}.baselineMean",
+      "e{N}.zScore"
+    ],
+    "evidenceOrder": "evidence = one item per TRUE leaf condition, in order of appearance in 'when'; for symptoms observed=1, unit=flag, comparator '==', threshold=1"
+  },
+  "statusPolicy": {
+    "critical": "any firing alert with level=critical",
+    "warning": "else any firing alert with level=warning",
+    "insufficient_data": "else if fewer than minMetricsForNormal distinct metrics are in context",
+    "normal": "otherwise",
+    "minMetricsForNormal": 3,
+    "note": "status is recomputed from current context, not from stored alert history; insights never affect status"
+  },
+  "trendPolicy": {
+    "windowDays": 7,
+    "baseline": {
+      "windowDays": 14,
+      "excludeLastHours": 24,
+      "minSamples": 5,
+      "minDistinctDays": 3,
+      "method": "mean and sample SD of valid readings per field"
+    },
+    "direction": {
+      "compare": "mean of last 3 days vs mean of the earlier 4 days",
+      "minDaysWithDataPerSide": 2,
+      "stableBand": {
+        "heart_rate.bpm": 5,
+        "blood_pressure.systolic": 8,
+        "blood_pressure.diastolic": 5,
+        "spo2.percent": 1,
+        "temperature.celsius": 0.3,
+        "sleep.hours": 1,
+        "sleep.quality": 0.5
+      }
+    },
+    "rounding": "means and SDs rounded to 2 decimals"
+  },
+  "sources": {
+    "SRC-VITALS-GENERAL": {
+      "title": "Unverified illustrative physiological thresholds; not astronaut clinical limits",
+      "url": null,
+      "verified": false
+    },
+    "SRC-AHA-BP": {
+      "title": "AHA/ACC blood pressure categories (adapted)",
+      "url": null,
+      "verified": false
+    },
+    "SRC-SLEEP-GENERAL": {
+      "title": "General adult sleep duration guidance (demo thresholds)",
+      "url": null,
+      "verified": false
+    },
+    "SRC-AC-SYMPTOM": {
+      "title": "Chest pain red-flag guidance (general first-aid practice)",
+      "url": null,
+      "verified": false
+    }
+  },
+  "actions": {
+    "ACT-WARN-VITAL": "Check the measurement technique and context if safe, and follow the mission health-monitoring protocol; report persistent concerns or symptoms.",
+    "ACT-CRIT-VITAL": "Stop strenuous activity, alert a crew member and follow the approved mission medical protocol. Do not delay seeking medical support to repeat a reading.",
+    "ACT-SLEEP": "Plan a recovery rest period and log how you feel; discuss persistent poor sleep with the crew medical officer.",
+    "ACT-SYMPTOM-WARN": "Stop strenuous activity and notify a crew member; use approved mission symptom guidance and seek medical support.",
+    "ACT-SYMPTOM-CRIT": "Stop activity, alert the crew, and contact the Flight Surgeon or crew medical officer immediately.",
+    "ACT-CHEST-EMERGENCY": "Immediately notify the crew, stop strenuous activity and follow the mission emergency medical protocol; do not wait for questionnaire responses."
+  },
+  "rules": [
+    {
+      "id": "HR-LOW-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "vital",
+      "group": "hr_low",
+      "metrics": [
+        "heart_rate"
+      ],
+      "title": "Low heart rate",
+      "when": {
+        "field": "heart_rate.bpm",
+        "op": "<",
+        "value": 50
+      },
+      "actionRef": "ACT-WARN-VITAL",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "HR-LOW-C",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "critical",
+      "category": "vital",
+      "group": "hr_low",
+      "metrics": [
+        "heart_rate"
+      ],
+      "title": "Very low heart rate",
+      "when": {
+        "field": "heart_rate.bpm",
+        "op": "<",
+        "value": 40
+      },
+      "actionRef": "ACT-CRIT-VITAL",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "HR-HIGH-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "vital",
+      "group": "hr_high",
+      "metrics": [
+        "heart_rate"
+      ],
+      "title": "High heart rate",
+      "when": {
+        "field": "heart_rate.bpm",
+        "op": ">",
+        "value": 110
+      },
+      "actionRef": "ACT-WARN-VITAL",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "HR-HIGH-C",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "critical",
+      "category": "vital",
+      "group": "hr_high",
+      "metrics": [
+        "heart_rate"
+      ],
+      "title": "Very high heart rate",
+      "when": {
+        "field": "heart_rate.bpm",
+        "op": ">",
+        "value": 140
+      },
+      "actionRef": "ACT-CRIT-VITAL",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "BP-HIGH-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "vital",
+      "group": "bp_high",
+      "metrics": [
+        "blood_pressure"
+      ],
+      "title": "High blood pressure",
+      "when": {
+        "any": [
+          {
+            "field": "blood_pressure.systolic",
+            "op": ">=",
+            "value": 140
+          },
+          {
+            "field": "blood_pressure.diastolic",
+            "op": ">=",
+            "value": 90
+          }
+        ]
+      },
+      "actionRef": "ACT-WARN-VITAL",
+      "sourceRef": "SRC-AHA-BP"
+    },
+    {
+      "id": "BP-HIGH-C",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "critical",
+      "category": "vital",
+      "group": "bp_high",
+      "metrics": [
+        "blood_pressure"
+      ],
+      "title": "Very high blood pressure",
+      "when": {
+        "any": [
+          {
+            "field": "blood_pressure.systolic",
+            "op": ">=",
+            "value": 180
+          },
+          {
+            "field": "blood_pressure.diastolic",
+            "op": ">=",
+            "value": 120
+          }
+        ]
+      },
+      "actionRef": "ACT-CRIT-VITAL",
+      "sourceRef": "SRC-AHA-BP"
+    },
+    {
+      "id": "BP-LOW-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "vital",
+      "group": "bp_low",
+      "metrics": [
+        "blood_pressure"
+      ],
+      "title": "Low blood pressure",
+      "when": {
+        "any": [
+          {
+            "field": "blood_pressure.systolic",
+            "op": "<",
+            "value": 90
+          },
+          {
+            "field": "blood_pressure.diastolic",
+            "op": "<",
+            "value": 60
+          }
+        ]
+      },
+      "actionRef": "ACT-WARN-VITAL",
+      "sourceRef": "SRC-AHA-BP"
+    },
+    {
+      "id": "BP-LOW-C",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "critical",
+      "category": "vital",
+      "group": "bp_low",
+      "metrics": [
+        "blood_pressure"
+      ],
+      "title": "Very low blood pressure",
+      "when": {
+        "any": [
+          {
+            "field": "blood_pressure.systolic",
+            "op": "<",
+            "value": 80
+          },
+          {
+            "field": "blood_pressure.diastolic",
+            "op": "<",
+            "value": 50
+          }
+        ]
+      },
+      "actionRef": "ACT-CRIT-VITAL",
+      "sourceRef": "SRC-AHA-BP"
+    },
+    {
+      "id": "SPO2-LOW-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "vital",
+      "group": "spo2_low",
+      "metrics": [
+        "spo2"
+      ],
+      "title": "Low blood oxygen",
+      "when": {
+        "field": "spo2.percent",
+        "op": "<",
+        "value": 95
+      },
+      "actionRef": "ACT-WARN-VITAL",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "SPO2-LOW-C",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "critical",
+      "category": "vital",
+      "group": "spo2_low",
+      "metrics": [
+        "spo2"
+      ],
+      "title": "Very low blood oxygen",
+      "when": {
+        "field": "spo2.percent",
+        "op": "<",
+        "value": 90
+      },
+      "actionRef": "ACT-CRIT-VITAL",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "TEMP-HIGH-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "vital",
+      "group": "temp_high",
+      "metrics": [
+        "temperature"
+      ],
+      "title": "Elevated temperature",
+      "when": {
+        "field": "temperature.celsius",
+        "op": ">=",
+        "value": 37.8
+      },
+      "actionRef": "ACT-WARN-VITAL",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "TEMP-HIGH-C",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "critical",
+      "category": "vital",
+      "group": "temp_high",
+      "metrics": [
+        "temperature"
+      ],
+      "title": "High fever range",
+      "when": {
+        "field": "temperature.celsius",
+        "op": ">=",
+        "value": 39.0
+      },
+      "actionRef": "ACT-CRIT-VITAL",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "TEMP-LOW-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "vital",
+      "group": "temp_low",
+      "metrics": [
+        "temperature"
+      ],
+      "title": "Low temperature",
+      "when": {
+        "field": "temperature.celsius",
+        "op": "<",
+        "value": 36.0
+      },
+      "actionRef": "ACT-WARN-VITAL",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "TEMP-LOW-C",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "critical",
+      "category": "vital",
+      "group": "temp_low",
+      "metrics": [
+        "temperature"
+      ],
+      "title": "Very low temperature",
+      "when": {
+        "field": "temperature.celsius",
+        "op": "<",
+        "value": 35.0
+      },
+      "actionRef": "ACT-CRIT-VITAL",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "SLP-DUR-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "vital",
+      "group": "slp_dur",
+      "metrics": [
+        "sleep"
+      ],
+      "title": "Short sleep",
+      "when": {
+        "field": "sleep.hours",
+        "op": "<",
+        "value": 6
+      },
+      "actionRef": "ACT-SLEEP",
+      "sourceRef": "SRC-SLEEP-GENERAL"
+    },
+    {
+      "id": "SLP-QUAL-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "vital",
+      "group": "slp_qual",
+      "metrics": [
+        "sleep"
+      ],
+      "title": "Poor sleep quality",
+      "when": {
+        "field": "sleep.quality",
+        "op": "<=",
+        "value": 2
+      },
+      "actionRef": "ACT-SLEEP",
+      "sourceRef": "SRC-SLEEP-GENERAL"
+    },
+    {
+      "id": "SYM-CHEST-C",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "critical",
+      "category": "emergency",
+      "group": "sym_chest",
+      "metrics": [],
+      "title": "Chest pain reported",
+      "when": {
+        "symptom": "chest_pain"
+      },
+      "explanationTemplate": "You reported chest pain. Chest pain can signal a serious emergency, so emergency guidance has been opened.",
+      "actionRef": "ACT-CHEST-EMERGENCY",
+      "sourceRef": "SRC-AC-SYMPTOM",
+      "emergencyProtocolId": "chest-pain-v1"
+    },
+    {
+      "id": "SYM-DYSP-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "symptom",
+      "group": "sym_dysp",
+      "metrics": [],
+      "title": "Shortness of breath reported",
+      "when": {
+        "symptom": "shortness_of_breath"
+      },
+      "explanationTemplate": "You reported shortness of breath.",
+      "actionRef": "ACT-SYMPTOM-WARN",
+      "sourceRef": "SRC-AC-SYMPTOM"
+    },
+    {
+      "id": "SYM-DIZZ-W",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "warning",
+      "category": "symptom",
+      "group": "sym_dizz",
+      "metrics": [],
+      "title": "Dizziness reported",
+      "when": {
+        "symptom": "dizziness"
+      },
+      "explanationTemplate": "You reported dizziness.",
+      "actionRef": "ACT-SYMPTOM-WARN",
+      "sourceRef": "SRC-AC-SYMPTOM"
+    },
+    {
+      "id": "CMB-DYSP-SPO2-C",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "critical",
+      "category": "combination",
+      "group": "sym_dysp",
+      "metrics": [
+        "spo2"
+      ],
+      "title": "Breathlessness with low oxygen",
+      "when": {
+        "all": [
+          {
+            "symptom": "shortness_of_breath"
+          },
+          {
+            "field": "spo2.percent",
+            "op": "<",
+            "value": 95
+          }
+        ]
+      },
+      "explanationTemplate": "Shortness of breath was reported together with SpO2 of {e1.observed} %, below {e1.threshold} %.",
+      "actionRef": "ACT-SYMPTOM-CRIT",
+      "sourceRef": "SRC-VITALS-GENERAL"
+    },
+    {
+      "id": "CMB-DIZZ-BP-C",
+      "revision": 1,
+      "type": "threshold",
+      "output": "alert",
+      "level": "critical",
+      "category": "combination",
+      "group": "sym_dizz",
+      "metrics": [
+        "blood_pressure"
+      ],
+      "title": "Dizziness with low blood pressure",
+      "when": {
+        "all": [
+          {
+            "symptom": "dizziness"
+          },
+          {
+            "field": "blood_pressure.systolic",
+            "op": "<",
+            "value": 90
+          }
+        ]
+      },
+      "explanationTemplate": "Dizziness was reported together with systolic pressure of {e1.observed} mmHg, below {e1.threshold} mmHg.",
+      "actionRef": "ACT-SYMPTOM-CRIT",
+      "sourceRef": "SRC-AHA-BP"
+    },
+    {
+      "id": "INS-BASE-HR",
+      "revision": 1,
+      "type": "baseline_deviation",
+      "output": "insight",
+      "severity": "info",
+      "metrics": [
+        "heart_rate"
+      ],
+      "field": "heart_rate.bpm",
+      "zThreshold": 2,
+      "sdFloor": 5,
+      "text": "Your latest heart rate differs notably from your personal baseline."
+    },
+    {
+      "id": "INS-BASE-SYS",
+      "revision": 1,
+      "type": "baseline_deviation",
+      "output": "insight",
+      "severity": "info",
+      "metrics": [
+        "blood_pressure"
+      ],
+      "field": "blood_pressure.systolic",
+      "zThreshold": 2,
+      "sdFloor": 8,
+      "text": "Your latest systolic pressure differs notably from your personal baseline."
+    },
+    {
+      "id": "INS-BASE-SPO2",
+      "revision": 1,
+      "type": "baseline_deviation",
+      "output": "insight",
+      "severity": "info",
+      "metrics": [
+        "spo2"
+      ],
+      "field": "spo2.percent",
+      "zThreshold": 2,
+      "sdFloor": 1,
+      "text": "Your latest SpO2 differs notably from your personal baseline."
+    },
+    {
+      "id": "INS-BASE-TEMP",
+      "revision": 1,
+      "type": "baseline_deviation",
+      "output": "insight",
+      "severity": "info",
+      "metrics": [
+        "temperature"
+      ],
+      "field": "temperature.celsius",
+      "zThreshold": 2,
+      "sdFloor": 0.3,
+      "text": "Your latest temperature differs notably from your personal baseline."
+    },
+    {
+      "id": "INS-BASE-SLEEP",
+      "revision": 1,
+      "type": "baseline_deviation",
+      "output": "insight",
+      "severity": "info",
+      "metrics": [
+        "sleep"
+      ],
+      "field": "sleep.hours",
+      "zThreshold": 2,
+      "sdFloor": 1,
+      "text": "Your latest sleep duration differs notably from your personal baseline."
+    },
+    {
+      "id": "INS-TRND-SLEEP",
+      "revision": 1,
+      "type": "window_average",
+      "output": "insight",
+      "severity": "warning",
+      "metrics": [
+        "sleep"
+      ],
+      "field": "sleep.hours",
+      "lastN": 3,
+      "op": "<",
+      "value": 6,
+      "text": "Average sleep over your last 3 logged nights is below 6 hours."
+    }
+  ],
+  "demoOnly": true
+}

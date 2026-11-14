@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "resourcesVersion": "1.0.0",
+  "resources": [
+    {
+      "id": "nasa-osdr",
+      "title": "NASA Open Science Data Repository (OSDR)",
+      "url": "https://osdr.nasa.gov",
+      "category": "nasa_research",
+      "verified": true
+    },
+    {
+      "id": "nasa-life-sciences-portal",
+      "title": "NASA Life Sciences Portal",
+      "url": "https://nlsp.nasa.gov/explore",
+      "category": "nasa_research",
+      "verified": false,
+      "todo": "AI/Data: confirm the official URL before the demo"
+    },
+    {
+      "id": "bidmc",
+      "title": "BIDMC PPG and Respiration Dataset (PhysioNet)",
+      "url": "https://physionet.org/content/bidmc/1.0.0/",
+      "category": "candidate_dataset",
+      "verified": false,
+      "todo": "confirm license; not used in the demo"
+    },
+    {
+      "id": "sleep-edf",
+      "title": "Sleep-EDF Database Expanded (PhysioNet)",
+      "url": "https://physionet.org/content/sleep-edfx/1.0.0/",
+      "category": "candidate_dataset",
+      "verified": false,
+      "todo": "confirm license; not used in the demo"
+    },
+    {
+      "id": "utmb-actigraphy",
+      "title": "UTMB actigraphy dataset",
+      "url": "https://nlsp.nasa.gov/explore",
+      "category": "candidate_dataset",
+      "verified": false,
+      "todo": "verify access and license; not used in the demo"
+    },
+    {
+      "id": "nasa-human-research",
+      "title": "NASA Human Research Program Hazards",
+      "url": "https://www.nasa.gov/hrp/hazards/",
+      "category": "nasa_research",
+      "verified": false
+    },
+    {
+      "id": "medlineplus-vitals",
+      "title": "MedlinePlus Vital Signs",
+      "url": "https://medlineplus.gov/ency/article/002341.htm",
+      "category": "medical_reference",
+      "verified": false
+    },
+    {
+      "id": "fda-oximeter",
+      "title": "FDA Pulse Oximeters",
+      "url": "https://www.fda.gov/medical-devices/products-and-medical-procedures/pulse-oximeters",
+      "category": "medical_reference",
+      "verified": false
+    },
+    {
+      "id": "aha-chest",
+      "title": "AHA Heart Attack Warning Signs",
+      "url": "https://www.heart.org/en/health-topics/heart-attack/warning-signs-of-a-heart-attack",
+      "category": "medical_reference",
+      "verified": false
+    },
+    {
+      "id": "wesad",
+      "title": "WESAD",
+      "url": "https://archive.ics.uci.edu/dataset/465/wesad",
+      "category": "candidate_dataset",
+      "verified": false
+    }
+  ]
+}

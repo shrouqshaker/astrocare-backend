@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "batchId": "234feff0-0552-462b-9368-868b42b56bf5",
+  "receivedAt": "2026-11-13T19:00:01Z",
+  "serverTime": "2026-11-13T19:00:01Z",
+  "summary": {
+    "created": 3,
+    "duplicates": 0,
+    "rejected": 0
+  },
+  "results": {
+    "measurements": [
+      {
+        "id": "4dba7f59-3936-528b-b1b1-86aa51fd641c",
+        "status": "created",
+        "error": null
+      }
+    ],
+    "symptomCheckins": [
+      {
+        "id": "9fd46ccc-d519-5ba5-a990-651f60bf331c",
+        "status": "created",
+        "error": null
+      }
+    ],
+    "alerts": [
+      {
+        "id": "5433a327-9120-4c25-bfa7-f7a2b579b9e9",
+        "status": "created",
+        "error": null
+      }
+    ]
+  },
+  "latestRuleSetVersion": "1.0.0"
+}

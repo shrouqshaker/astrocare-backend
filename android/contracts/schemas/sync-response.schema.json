@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astrocare.dev/schemas/sync-response.schema.json",
+  "title": "SyncBatchResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "batchId",
+    "receivedAt",
+    "serverTime",
+    "summary",
+    "results",
+    "latestRuleSetVersion"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "batchId": {
+      "$ref": "common.schema.json#/$defs/uuid"
+    },
+    "receivedAt": {
+      "$ref": "common.schema.json#/$defs/utcDateTime"
+    },
+    "serverTime": {
+      "$ref": "common.schema.json#/$defs/utcDateTime"
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "created",
+        "duplicates",
+        "rejected"
+      ],
+      "properties": {
+        "created": {
+          "type": "integer"
+        },
+        "duplicates": {
+          "type": "integer"
+        },
+        "rejected": {
+          "type": "integer"
+        }
+      }
+    },
+    "results": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "measurements",
+        "symptomCheckins",
+        "alerts"
+      ],
+      "properties": {
+        "measurements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/itemResult"
+          }
+        },
+        "symptomCheckins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/itemResult"
+          }
+        },
+        "alerts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/itemResult"
+          }
+        }
+      }
+    },
+    "latestRuleSetVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    }
+  },
+  "$defs": {
+    "itemResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "created",
+            "duplicate",
+            "rejected"
+          ]
+        },
+        "error": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "code",
+            "message"
+          ],
+          "properties": {
+            "code": {
+              "enum": [
+                "VALIDATION_ERROR",
+                "CROSS_FIELD_INVALID",
+                "ASTRONAUT_MISMATCH",
+                "UNSUPPORTED_SCHEMA_VERSION"
+              ]
+            },
+            "message": {
+              "type": "string"
+            },
+            "details": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

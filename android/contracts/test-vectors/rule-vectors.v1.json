@@ -1,0 +1,834 @@
+{
+  "schemaVersion": "1.0",
+  "ruleSetVersion": "1.0.0",
+  "vectors": [
+    {
+      "name": "all-normal",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": [
+          "none"
+        ]
+      },
+      "expected": {
+        "status": "normal",
+        "alerts": []
+      }
+    },
+    {
+      "name": "insufficient-data",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "insufficient_data",
+        "alerts": []
+      }
+    },
+    {
+      "name": "chest-pain",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {},
+        "symptoms": [
+          "chest_pain"
+        ]
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "SYM-CHEST-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-HR-LOW-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 49,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "HR-LOW-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-HR-LOW-C",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 39,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "HR-LOW-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-HR-HIGH-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 111,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "HR-HIGH-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-HR-HIGH-C",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 141,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "HR-HIGH-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-BP-HIGH-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 140,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "BP-HIGH-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-BP-HIGH-C",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 180,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "BP-HIGH-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-BP-LOW-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 89,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "BP-LOW-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-BP-LOW-C",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 79,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "BP-LOW-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-SPO2-LOW-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 94,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "SPO2-LOW-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-SPO2-LOW-C",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 89,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "SPO2-LOW-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-TEMP-HIGH-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 37.8,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "TEMP-HIGH-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-TEMP-HIGH-C",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 39.0,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "TEMP-HIGH-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-TEMP-LOW-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 35.0,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "TEMP-LOW-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-TEMP-LOW-C",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 34.0,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "TEMP-LOW-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-SLP-DUR-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "SLP-DUR-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-SLP-QUAL-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 2
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "SLP-QUAL-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-SYM-CHEST-C",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": [
+          "chest_pain"
+        ]
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "SYM-CHEST-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-SYM-DYSP-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": [
+          "shortness_of_breath"
+        ]
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "SYM-DYSP-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-SYM-DIZZ-W",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": [
+          "dizziness"
+        ]
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "SYM-DIZZ-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-CMB-DYSP-SPO2-C",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 94,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": [
+          "shortness_of_breath"
+        ]
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "CMB-DYSP-SPO2-C",
+            "level": "critical"
+          },
+          {
+            "ruleId": "SPO2-LOW-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "trigger-CMB-DIZZ-BP-C",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 72,
+          "blood_pressure.systolic": 89,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": [
+          "dizziness"
+        ]
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "BP-LOW-W",
+            "level": "warning"
+          },
+          {
+            "ruleId": "CMB-DIZZ-BP-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "heart-rate-45",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 45,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "HR-LOW-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "heart-rate-50",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 50,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "normal",
+        "alerts": []
+      }
+    },
+    {
+      "name": "heart-rate-110",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 110,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "normal",
+        "alerts": []
+      }
+    },
+    {
+      "name": "heart-rate-111",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 111,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "HR-HIGH-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "heart-rate-140",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 140,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "HR-HIGH-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "heart-rate-141",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 141,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "HR-HIGH-C",
+            "level": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "heart-rate-75",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 75,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "normal",
+        "alerts": []
+      }
+    },
+    {
+      "name": "heart-rate-90",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 90,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "normal",
+        "alerts": []
+      }
+    },
+    {
+      "name": "heart-rate-120",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 120,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "warning",
+        "alerts": [
+          {
+            "ruleId": "HR-HIGH-W",
+            "level": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "name": "heart-rate-145",
+      "now": "2026-11-13T18:00:00Z",
+      "context": {
+        "measurements": {
+          "heart_rate.bpm": 145,
+          "blood_pressure.systolic": 118,
+          "blood_pressure.diastolic": 76,
+          "spo2.percent": 98,
+          "temperature.celsius": 36.7,
+          "sleep.hours": 7.5,
+          "sleep.quality": 4
+        },
+        "symptoms": []
+      },
+      "expected": {
+        "status": "critical",
+        "alerts": [
+          {
+            "ruleId": "HR-HIGH-C",
+            "level": "critical"
+          }
+        ]
+      }
+    }
+  ]
+}

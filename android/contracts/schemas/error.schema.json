@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astrocare.dev/schemas/error.schema.json",
+  "title": "ErrorResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "error"
+  ],
+  "properties": {
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message",
+        "requestId"
+      ],
+      "properties": {
+        "code": {
+          "enum": [
+            "VALIDATION_ERROR",
+            "UNSUPPORTED_SCHEMA_VERSION",
+            "UNAUTHORIZED",
+            "NOT_FOUND",
+            "PAYLOAD_TOO_LARGE",
+            "INTERNAL_ERROR",
+            "DB_UNAVAILABLE"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "path",
+              "message"
+            ],
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "requestId": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

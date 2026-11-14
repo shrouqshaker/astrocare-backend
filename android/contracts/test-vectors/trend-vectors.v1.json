@@ -1,0 +1,295 @@
+{
+  "schemaVersion": "1.0",
+  "ruleSetVersion": "1.0.0",
+  "note": "Intermediate aggregate test vectors; final TrendReport integration must follow trend-report.schema.json.",
+  "vectors": [
+    {
+      "name": "heart_rate-seven-days",
+      "now": "2026-11-13T18:00:00Z",
+      "utcOffsetMinutes": 0,
+      "input": {
+        "metric": "heart_rate",
+        "field": "bpm",
+        "dailyValues": [
+          {
+            "date": "2026-11-07",
+            "values": [
+              70
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "values": [
+              71
+            ]
+          },
+          {
+            "date": "2026-11-09",
+            "values": [
+              72
+            ]
+          },
+          {
+            "date": "2026-11-10",
+            "values": [
+              73
+            ]
+          },
+          {
+            "date": "2026-11-11",
+            "values": [
+              74
+            ]
+          },
+          {
+            "date": "2026-11-12",
+            "values": [
+              75
+            ]
+          },
+          {
+            "date": "2026-11-13",
+            "values": [
+              76
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "dailyCount": 7,
+        "weekMean": 73.0,
+        "latest": 76,
+        "latestAtDate": "2026-11-13"
+      }
+    },
+    {
+      "name": "spo2-seven-days",
+      "now": "2026-11-13T18:00:00Z",
+      "utcOffsetMinutes": 0,
+      "input": {
+        "metric": "spo2",
+        "field": "percent",
+        "dailyValues": [
+          {
+            "date": "2026-11-07",
+            "values": [
+              97
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "values": [
+              98
+            ]
+          },
+          {
+            "date": "2026-11-09",
+            "values": [
+              99
+            ]
+          },
+          {
+            "date": "2026-11-10",
+            "values": [
+              97
+            ]
+          },
+          {
+            "date": "2026-11-11",
+            "values": [
+              98
+            ]
+          },
+          {
+            "date": "2026-11-12",
+            "values": [
+              99
+            ]
+          },
+          {
+            "date": "2026-11-13",
+            "values": [
+              97
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "dailyCount": 7,
+        "weekMean": 97.86,
+        "latest": 97,
+        "latestAtDate": "2026-11-13"
+      }
+    },
+    {
+      "name": "temperature-seven-days",
+      "now": "2026-11-13T18:00:00Z",
+      "utcOffsetMinutes": 0,
+      "input": {
+        "metric": "temperature",
+        "field": "celsius",
+        "dailyValues": [
+          {
+            "date": "2026-11-07",
+            "values": [
+              36.4
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "values": [
+              36.5
+            ]
+          },
+          {
+            "date": "2026-11-09",
+            "values": [
+              36.6
+            ]
+          },
+          {
+            "date": "2026-11-10",
+            "values": [
+              36.7
+            ]
+          },
+          {
+            "date": "2026-11-11",
+            "values": [
+              36.8
+            ]
+          },
+          {
+            "date": "2026-11-12",
+            "values": [
+              36.9
+            ]
+          },
+          {
+            "date": "2026-11-13",
+            "values": [
+              37.0
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "dailyCount": 7,
+        "weekMean": 36.7,
+        "latest": 37.0,
+        "latestAtDate": "2026-11-13"
+      }
+    },
+    {
+      "name": "sleep-seven-days",
+      "now": "2026-11-13T18:00:00Z",
+      "utcOffsetMinutes": 0,
+      "input": {
+        "metric": "sleep",
+        "field": "hours",
+        "dailyValues": [
+          {
+            "date": "2026-11-07",
+            "values": [
+              7.0
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "values": [
+              7.1
+            ]
+          },
+          {
+            "date": "2026-11-09",
+            "values": [
+              7.2
+            ]
+          },
+          {
+            "date": "2026-11-10",
+            "values": [
+              7.3
+            ]
+          },
+          {
+            "date": "2026-11-11",
+            "values": [
+              7.4
+            ]
+          },
+          {
+            "date": "2026-11-12",
+            "values": [
+              7.5
+            ]
+          },
+          {
+            "date": "2026-11-13",
+            "values": [
+              7.6
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "dailyCount": 7,
+        "weekMean": 7.3,
+        "latest": 7.6,
+        "latestAtDate": "2026-11-13"
+      }
+    },
+    {
+      "name": "missing-days",
+      "now": "2026-11-13T18:00:00Z",
+      "utcOffsetMinutes": 0,
+      "input": {
+        "metric": "heart_rate",
+        "field": "bpm",
+        "dailyValues": [
+          {
+            "date": "2026-11-07",
+            "values": [
+              70
+            ]
+          },
+          {
+            "date": "2026-11-08",
+            "values": []
+          },
+          {
+            "date": "2026-11-09",
+            "values": []
+          },
+          {
+            "date": "2026-11-10",
+            "values": [
+              73
+            ]
+          },
+          {
+            "date": "2026-11-11",
+            "values": []
+          },
+          {
+            "date": "2026-11-12",
+            "values": []
+          },
+          {
+            "date": "2026-11-13",
+            "values": [
+              76
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "dailyCount": 7,
+        "weekMean": 73.0,
+        "latest": 76,
+        "latestAtDate": "2026-11-13",
+        "missingDays": 4
+      }
+    }
+  ]
+}

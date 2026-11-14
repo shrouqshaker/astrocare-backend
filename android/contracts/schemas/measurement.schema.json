@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astrocare.dev/schemas/measurement.schema.json",
+  "title": "Measurement",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "astronautId",
+    "metric",
+    "values",
+    "measuredAt",
+    "utcOffsetMinutes",
+    "environment",
+    "source",
+    "isSynthetic",
+    "createdAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/uuid"
+    },
+    "astronautId": {
+      "$ref": "common.schema.json#/$defs/astronautId"
+    },
+    "metric": {
+      "$ref": "common.schema.json#/$defs/metric"
+    },
+    "values": {
+      "type": "object"
+    },
+    "measuredAt": {
+      "$ref": "common.schema.json#/$defs/utcDateTime"
+    },
+    "utcOffsetMinutes": {
+      "$ref": "common.schema.json#/$defs/utcOffsetMinutes"
+    },
+    "environment": {
+      "$ref": "common.schema.json#/$defs/environmentId"
+    },
+    "source": {
+      "$ref": "common.schema.json#/$defs/source"
+    },
+    "isSynthetic": {
+      "type": "boolean"
+    },
+    "note": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 280
+    },
+    "createdAt": {
+      "$ref": "common.schema.json#/$defs/utcDateTime"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "metric": {
+            "const": "heart_rate"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "values": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "bpm"
+            ],
+            "properties": {
+              "bpm": {
+                "type": "integer",
+                "minimum": 20,
+                "maximum": 250
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "metric": {
+            "const": "blood_pressure"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "values": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "systolic",
+              "diastolic"
+            ],
+            "properties": {
+              "systolic": {
+                "type": "integer",
+                "minimum": 50,
+                "maximum": 260
+              },
+              "diastolic": {
+                "type": "integer",
+                "minimum": 30,
+                "maximum": 160
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "metric": {
+            "const": "spo2"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "values": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "percent"
+            ],
+            "properties": {
+              "percent": {
+                "type": "number",
+                "minimum": 50,
+                "maximum": 100
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "metric": {
+            "const": "temperature"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "values": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "celsius"
+            ],
+            "properties": {
+              "celsius": {
+                "type": "number",
+                "minimum": 30,
+                "maximum": 43
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "metric": {
+            "const": "sleep"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "values": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "hours",
+              "quality"
+            ],
+            "properties": {
+              "hours": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 24
+              },
+              "quality": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

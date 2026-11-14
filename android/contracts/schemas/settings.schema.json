@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astrocare.dev/schemas/settings.schema.json",
+  "title": "AppSettings",
+  "description": "Android-local (DataStore/Room). Not synced. Pending sync count is derived (COUNT localSyncStatus='pending'), never stored.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "astronautId",
+    "deviceId",
+    "environment",
+    "reminders",
+    "sync",
+    "language",
+    "loadedRuleSetVersion"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "astronautId": {
+      "$ref": "common.schema.json#/$defs/astronautId"
+    },
+    "deviceId": {
+      "$ref": "common.schema.json#/$defs/uuid"
+    },
+    "environment": {
+      "$ref": "common.schema.json#/$defs/environmentId"
+    },
+    "language": {
+      "enum": [
+        "en",
+        "ar"
+      ],
+      "default": "en"
+    },
+    "loadedRuleSetVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "reminders": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "label",
+          "target",
+          "time",
+          "daysOfWeek",
+          "enabled"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/uuid"
+          },
+          "label": {
+            "type": "string",
+            "maxLength": 60
+          },
+          "target": {
+            "enum": [
+              "all",
+              "heart_rate",
+              "blood_pressure",
+              "spo2",
+              "temperature",
+              "sleep"
+            ]
+          },
+          "time": {
+            "type": "string",
+            "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+          },
+          "daysOfWeek": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 7
+            },
+            "description": "ISO: 1=Monday … 7=Sunday"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "sync": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "baseUrl",
+        "apiKey",
+        "wifiOnly",
+        "intervalMinutes",
+        "lastSyncAt",
+        "lastSyncResult"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "baseUrl": {
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "http://10.0.2.2:3000"
+          ]
+        },
+        "apiKey": {
+          "type": "string"
+        },
+        "wifiOnly": {
+          "type": "boolean"
+        },
+        "intervalMinutes": {
+          "type": "integer",
+          "minimum": 15,
+          "default": 15
+        },
+        "lastSyncAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lastSyncResult": {
+          "enum": [
+            "never",
+            "success",
+            "partial",
+            "failed"
+          ]
+        }
+      }
+    }
+  }
+}
