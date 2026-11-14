@@ -1,6 +1,6 @@
 # AstroCare backend — shared contracts v1.0.0
 
-Runnable Node.js 22+ / Express / MongoDB / Mongoose / Zod backend. The supplied shared schemas, examples, rules, guides and synthetic seed are unchanged under `contracts/`.
+Runnable Node.js 22+ / Express / MongoDB / Mongoose / Zod backend. The supplied shared schemas, examples, rules, guides and synthetic seed are unchanged under `contracts/`. AI/Data integration and the UUIDv5 parity fixes are documented in [docs/AI-DATA-INTEGRATION.md](docs/AI-DATA-INTEGRATION.md).
 
 The earlier prototype is archived in `archive/pre-contract-v1/` in the workspace. The active API uses **`id`, not `clientId`**, and **`/api/v1/sync/batch`**, not `/sync`. See [compatibility decisions](docs/BACKEND-DECISIONS.md) for the overview extension, Node trends substitution and explicitly documented interpretations. No automatic data migration is performed.
 
@@ -93,13 +93,14 @@ All paths below are relative to `/api/v1`.
 
 History returns `{ "items": [...], "count": n }`, sorted by actual event time descending, with no `_id` or server metadata. `limit` defaults to 200 and is at most 1000. Measurement metrics: `heart_rate`, `blood_pressure`, `spo2`, `temperature`, `sleep`; alert levels: `warning`, `critical`. Both date bounds are inclusive UTC timestamps with seconds ending in `Z`, for example `from=2026-11-01T00:00:00Z&to=2026-11-13T23:59:59.999Z`. Missing bounds are open. Unsupported query keys, invalid dates/enums and reversed ranges return 400.
 
-Trends include seven local-date points per field, nulls for missing days, baseline sample counts/mean/sample SD and evidence-backed insights. Overview recomputes current status from the latest records in the rules' context window; it does not infer current status from historical uploaded alerts. It does not save derived alerts. The Node implementation is not the missing Python reference package. Detailed math, interpretation choices and scope are in `docs/BACKEND-DECISIONS.md`.
+Trends include seven local-date points per field, nulls for missing days, baseline sample counts/mean/sample SD and evidence-backed insights. Overview recomputes current status from the latest records in the rules' context window; it does not infer current status from historical uploaded alerts. It does not save derived alerts. The Node implementation is parity-tested against the frozen Python reference fixture (`test/reference-parity.test.js`), including exact alert/insight UUIDv5 ids, evidence and metrics. Detailed math, interpretation choices and scope are in `docs/BACKEND-DECISIONS.md`.
 
 ## Test and package
 
 ```powershell
 npm.cmd run contracts:verify
 npm.cmd run test:unit
+npm.cmd run test:reference
 npm.cmd test
 npm.cmd run package
 ```
@@ -125,4 +126,4 @@ contracts/                 Unchanged shared v1 files
 test/, scripts/, docs/     Checks, explicit seed, packaging and decisions
 ```
 
-This is a single-astronaut educational demo. An API key embedded in an APK is not secure mobile authentication. Use synthetic data only until real user authentication, authorization and appropriate deployment controls are implemented. Illustrative alert thresholds and advice are not validated medical or flight policies. Backend tests do not establish clinical suitability or Android/Python integration parity.
+This is a single-astronaut educational demo. An API key embedded in an APK is not secure mobile authentication. Use synthetic data only until real user authentication, authorization and appropriate deployment controls are implemented. Illustrative alert thresholds and advice are not validated medical or flight policies. Backend tests establish contract and Python-fixture parity, not clinical suitability or on-device Android integration.

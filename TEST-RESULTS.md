@@ -1,8 +1,8 @@
 # Backend verification results
 
-Date: 2026-11-13. Windows, Node.js v24.18.1, npm 12.0.2.
+Date: 2026-11-14. Linux, Node.js v22.23.4, npm 10.9.9.
 
-Final command: npm.cmd test — exit code 0: **62 passed, 0 failed, 0 skipped**, about 13.7 seconds.
+Final command: npm test — exit code 0: **64 passed, 0 failed, 0 skipped**, about 6.4 seconds.
 
 - All 34 supplied rule vectors and 5 intermediate trend vectors passed.
 - Shared examples and all 126 synthetic measurements plus one symptom check-in validated.
@@ -25,7 +25,7 @@ One earlier full run hit a subprocess timeout during seed-CLI replay. The isolat
 
 ## Honest limitations
 
-- Python's astrocare_ai package is absent from the supplied ZIP. Trends run in Node.js with generatedBy backend_optional; full Python/Kotlin parity is untested. This explicit substitution is documented in docs/BACKEND-DECISIONS.md.
+- Trends still run in Node.js with generatedBy backend_optional, but the critical chest-pain demo now matches the frozen Python reference fixture exactly (alerts, insight UUIDv5 ids, evidence, metrics and window) in test/reference-parity.test.js. A live Python/Kotlin runtime is not invoked in production; on-device Android integration is still not tested here.
 - Overview is a proposed additional endpoint because no overview route/schema exists in the frozen API. Shared contracts remain unchanged; team agreement is needed before other tracks depend on this extension.
 - Android/Room/WorkManager integration, physical devices, production deployment, Atlas networking and a permanent development MongoDB service were not tested.
 - Genuine mid-batch network/database fault recovery and multi-process synthetic replacement were not fault-injected. Sync and replacement are not all-or-nothing transactions. Stable IDs make normal retries safe; run replacement without concurrent writers.

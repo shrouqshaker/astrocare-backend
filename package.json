@@ -13,7 +13,8 @@
     "test:unit": "node --test test/contracts.test.js test/analytics.test.js",
     "contracts:verify": "node scripts/verify-contracts.js",
     "seed": "node scripts/seed.js",
-    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1"
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1",
+    "test:reference": "node --test test/reference-parity.test.js"
   },
   "dependencies": {
     "ajv": "^8.20.0",
