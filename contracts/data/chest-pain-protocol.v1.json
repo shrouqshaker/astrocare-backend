@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0",
+  "protocolId": "chest-pain-v1",
+  "protocolVersion": "1.0.0",
+  "locale": "en",
+  "fullyOffline": true,
+  "disclaimer": "AstroCare provides general decision support only. It does not diagnose or treat any condition and does not replace a flight surgeon or qualified medical professional.",
+  "immediateSafetyInstructions": [
+    "Stop strenuous activity immediately.",
+    "Notify another crew member now; do not wait to finish the questions.",
+    "Follow the approved onboard medical emergency protocol.",
+    "Contact the designated crew medical officer / Flight Surgeon when communication is available.",
+    "If Earth communication is delayed, continue the approved onboard emergency procedure."
+  ],
+  "contactByEnvironment": {
+    "iss": "Use the onboard communication loop to reach Mission Control and the Flight Surgeon.",
+    "spacecraft": "Use the primary communication channel to the Flight Surgeon; expect possible delay and alert the crew first.",
+    "moon_base": "Alert the crew in the habitat, then contact the Flight Surgeon via the surface-to-Earth link; expect possible delay."
+  },
+  "maxQuestions": 5,
+  "questions": [
+    {
+      "id": "CP-Q1",
+      "text": "Is the pain severe, crushing, or spreading to your arm, jaw, neck, or back?",
+      "yesIsRedFlag": true
+    },
+    {
+      "id": "CP-Q2",
+      "text": "Do you also have shortness of breath, cold sweat, or nausea?",
+      "yesIsRedFlag": true
+    },
+    {
+      "id": "CP-Q3",
+      "text": "Are you feeling faint, dizzy, or about to pass out?",
+      "yesIsRedFlag": true
+    },
+    {
+      "id": "CP-Q4",
+      "text": "Has the pain lasted more than 5 minutes or is it getting worse?",
+      "yesIsRedFlag": true
+    },
+    {
+      "id": "CP-Q5",
+      "text": "Do you have a known heart condition or has this happened before?",
+      "yesIsRedFlag": false
+    }
+  ],
+  "outcomeRule": "emergency_now if any of CP-Q1..CP-Q4 is 'yes' or 'unsure'; otherwise urgent_contact. Both outcomes keep the immediate safety instructions visible and the alert level critical.",
+  "outcomes": {
+    "emergency_now": "Treat this as an emergency. Keep following the safety instructions and get medical help right now.",
+    "urgent_contact": "Chest pain still requires urgent evaluation. Follow the same immediate safety instructions, even when all questionnaire answers are negative."
+  }
+}

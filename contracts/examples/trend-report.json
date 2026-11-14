@@ -1,0 +1,510 @@
+{
+  "schemaVersion": "1.0",
+  "astronautId": "demo-astronaut-01",
+  "generatedAt": "2026-11-13T19:00:00Z",
+  "generatedBy": "python_reference",
+  "ruleSetVersion": "1.0.0",
+  "window": {
+    "from": "2026-11-07",
+    "to": "2026-11-13",
+    "days": 7,
+    "utcOffsetMinutes": 0
+  },
+  "metrics": [
+    {
+      "metric": "heart_rate",
+      "baseline": {
+        "available": false,
+        "windowDays": 14,
+        "sampleCount": 0,
+        "distinctDays": 0,
+        "reason": "This example does not calculate a personal baseline"
+      },
+      "fields": [
+        {
+          "field": "heart_rate.bpm",
+          "unit": "bpm",
+          "latest": 73,
+          "latestAt": "2026-11-13T17:19:00Z",
+          "weekMean": 73.0,
+          "baselineMean": null,
+          "baselineSd": null,
+          "deltaVsBaseline": null,
+          "direction": "insufficient_data",
+          "points": [
+            {
+              "date": "2026-11-07",
+              "count": 3,
+              "min": 75,
+              "mean": 76.33,
+              "max": 77
+            },
+            {
+              "date": "2026-11-08",
+              "count": 3,
+              "min": 68,
+              "mean": 71.67,
+              "max": 75
+            },
+            {
+              "date": "2026-11-09",
+              "count": 3,
+              "min": 66,
+              "mean": 70,
+              "max": 74
+            },
+            {
+              "date": "2026-11-10",
+              "count": 3,
+              "min": 67,
+              "mean": 69.33,
+              "max": 72
+            },
+            {
+              "date": "2026-11-11",
+              "count": 3,
+              "min": 67,
+              "mean": 69,
+              "max": 71
+            },
+            {
+              "date": "2026-11-12",
+              "count": 3,
+              "min": 79,
+              "mean": 81.33,
+              "max": 84
+            },
+            {
+              "date": "2026-11-13",
+              "count": 3,
+              "min": 71,
+              "mean": 73.33,
+              "max": 76
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "metric": "blood_pressure",
+      "baseline": {
+        "available": false,
+        "windowDays": 14,
+        "sampleCount": 0,
+        "distinctDays": 0,
+        "reason": "This example does not calculate a personal baseline"
+      },
+      "fields": [
+        {
+          "field": "blood_pressure.systolic",
+          "unit": "mmHg",
+          "latest": 119,
+          "latestAt": "2026-11-13T12:17:00Z",
+          "weekMean": 118.71,
+          "baselineMean": null,
+          "baselineSd": null,
+          "deltaVsBaseline": null,
+          "direction": "insufficient_data",
+          "points": [
+            {
+              "date": "2026-11-07",
+              "count": 2,
+              "min": 112,
+              "mean": 118,
+              "max": 124
+            },
+            {
+              "date": "2026-11-08",
+              "count": 2,
+              "min": 121,
+              "mean": 122,
+              "max": 123
+            },
+            {
+              "date": "2026-11-09",
+              "count": 2,
+              "min": 114,
+              "mean": 118,
+              "max": 122
+            },
+            {
+              "date": "2026-11-10",
+              "count": 2,
+              "min": 113,
+              "mean": 118,
+              "max": 123
+            },
+            {
+              "date": "2026-11-11",
+              "count": 2,
+              "min": 119,
+              "mean": 120.5,
+              "max": 122
+            },
+            {
+              "date": "2026-11-12",
+              "count": 2,
+              "min": 111,
+              "mean": 117.5,
+              "max": 124
+            },
+            {
+              "date": "2026-11-13",
+              "count": 2,
+              "min": 115,
+              "mean": 117,
+              "max": 119
+            }
+          ]
+        },
+        {
+          "field": "blood_pressure.diastolic",
+          "unit": "mmHg",
+          "latest": 80,
+          "latestAt": "2026-11-13T12:17:00Z",
+          "weekMean": 76.14,
+          "baselineMean": null,
+          "baselineSd": null,
+          "deltaVsBaseline": null,
+          "direction": "insufficient_data",
+          "points": [
+            {
+              "date": "2026-11-07",
+              "count": 2,
+              "min": 72,
+              "mean": 73,
+              "max": 74
+            },
+            {
+              "date": "2026-11-08",
+              "count": 2,
+              "min": 74,
+              "mean": 77,
+              "max": 80
+            },
+            {
+              "date": "2026-11-09",
+              "count": 2,
+              "min": 78,
+              "mean": 79.5,
+              "max": 81
+            },
+            {
+              "date": "2026-11-10",
+              "count": 2,
+              "min": 74,
+              "mean": 77,
+              "max": 80
+            },
+            {
+              "date": "2026-11-11",
+              "count": 2,
+              "min": 74,
+              "mean": 74.5,
+              "max": 75
+            },
+            {
+              "date": "2026-11-12",
+              "count": 2,
+              "min": 73,
+              "mean": 74.5,
+              "max": 76
+            },
+            {
+              "date": "2026-11-13",
+              "count": 2,
+              "min": 75,
+              "mean": 77.5,
+              "max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "metric": "spo2",
+      "baseline": {
+        "available": false,
+        "windowDays": 14,
+        "sampleCount": 0,
+        "distinctDays": 0,
+        "reason": "This example does not calculate a personal baseline"
+      },
+      "fields": [
+        {
+          "field": "spo2.percent",
+          "unit": "percent",
+          "latest": 93,
+          "latestAt": "2026-11-13T12:17:00Z",
+          "weekMean": 97.86,
+          "baselineMean": null,
+          "baselineSd": null,
+          "deltaVsBaseline": null,
+          "direction": "insufficient_data",
+          "points": [
+            {
+              "date": "2026-11-07",
+              "count": 2,
+              "min": 99,
+              "mean": 99,
+              "max": 99
+            },
+            {
+              "date": "2026-11-08",
+              "count": 2,
+              "min": 97,
+              "mean": 97.5,
+              "max": 98
+            },
+            {
+              "date": "2026-11-09",
+              "count": 2,
+              "min": 98,
+              "mean": 98.5,
+              "max": 99
+            },
+            {
+              "date": "2026-11-10",
+              "count": 2,
+              "min": 97,
+              "mean": 97.5,
+              "max": 98
+            },
+            {
+              "date": "2026-11-11",
+              "count": 2,
+              "min": 98,
+              "mean": 98.5,
+              "max": 99
+            },
+            {
+              "date": "2026-11-12",
+              "count": 2,
+              "min": 97,
+              "mean": 98,
+              "max": 99
+            },
+            {
+              "date": "2026-11-13",
+              "count": 2,
+              "min": 93,
+              "mean": 96,
+              "max": 99
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "metric": "temperature",
+      "baseline": {
+        "available": false,
+        "windowDays": 14,
+        "sampleCount": 0,
+        "distinctDays": 0,
+        "reason": "This example does not calculate a personal baseline"
+      },
+      "fields": [
+        {
+          "field": "temperature.celsius",
+          "unit": "celsius",
+          "latest": 36.5,
+          "latestAt": "2026-11-13T07:15:00Z",
+          "weekMean": 36.66,
+          "baselineMean": null,
+          "baselineSd": null,
+          "deltaVsBaseline": null,
+          "direction": "insufficient_data",
+          "points": [
+            {
+              "date": "2026-11-07",
+              "count": 1,
+              "min": 36.7,
+              "mean": 36.7,
+              "max": 36.7
+            },
+            {
+              "date": "2026-11-08",
+              "count": 1,
+              "min": 36.6,
+              "mean": 36.6,
+              "max": 36.6
+            },
+            {
+              "date": "2026-11-09",
+              "count": 1,
+              "min": 36.6,
+              "mean": 36.6,
+              "max": 36.6
+            },
+            {
+              "date": "2026-11-10",
+              "count": 1,
+              "min": 36.8,
+              "mean": 36.8,
+              "max": 36.8
+            },
+            {
+              "date": "2026-11-11",
+              "count": 1,
+              "min": 36.5,
+              "mean": 36.5,
+              "max": 36.5
+            },
+            {
+              "date": "2026-11-12",
+              "count": 1,
+              "min": 36.9,
+              "mean": 36.9,
+              "max": 36.9
+            },
+            {
+              "date": "2026-11-13",
+              "count": 1,
+              "min": 36.5,
+              "mean": 36.5,
+              "max": 36.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "metric": "sleep",
+      "baseline": {
+        "available": false,
+        "windowDays": 14,
+        "sampleCount": 0,
+        "distinctDays": 0,
+        "reason": "This example does not calculate a personal baseline"
+      },
+      "fields": [
+        {
+          "field": "sleep.hours",
+          "unit": "hours",
+          "latest": 8.0,
+          "latestAt": "2026-11-13T06:15:00Z",
+          "weekMean": 7.16,
+          "baselineMean": null,
+          "baselineSd": null,
+          "deltaVsBaseline": null,
+          "direction": "insufficient_data",
+          "points": [
+            {
+              "date": "2026-11-07",
+              "count": 1,
+              "min": 7.9,
+              "mean": 7.9,
+              "max": 7.9
+            },
+            {
+              "date": "2026-11-08",
+              "count": 1,
+              "min": 8.3,
+              "mean": 8.3,
+              "max": 8.3
+            },
+            {
+              "date": "2026-11-09",
+              "count": 1,
+              "min": 7.1,
+              "mean": 7.1,
+              "max": 7.1
+            },
+            {
+              "date": "2026-11-10",
+              "count": 1,
+              "min": 5.0,
+              "mean": 5.0,
+              "max": 5.0
+            },
+            {
+              "date": "2026-11-11",
+              "count": 1,
+              "min": 5.4,
+              "mean": 5.4,
+              "max": 5.4
+            },
+            {
+              "date": "2026-11-12",
+              "count": 1,
+              "min": 8.4,
+              "mean": 8.4,
+              "max": 8.4
+            },
+            {
+              "date": "2026-11-13",
+              "count": 1,
+              "min": 8.0,
+              "mean": 8.0,
+              "max": 8.0
+            }
+          ]
+        },
+        {
+          "field": "sleep.quality",
+          "unit": "score",
+          "latest": 3,
+          "latestAt": "2026-11-13T06:15:00Z",
+          "weekMean": 3.43,
+          "baselineMean": null,
+          "baselineSd": null,
+          "deltaVsBaseline": null,
+          "direction": "insufficient_data",
+          "points": [
+            {
+              "date": "2026-11-07",
+              "count": 1,
+              "min": 3,
+              "mean": 3,
+              "max": 3
+            },
+            {
+              "date": "2026-11-08",
+              "count": 1,
+              "min": 5,
+              "mean": 5,
+              "max": 5
+            },
+            {
+              "date": "2026-11-09",
+              "count": 1,
+              "min": 4,
+              "mean": 4,
+              "max": 4
+            },
+            {
+              "date": "2026-11-10",
+              "count": 1,
+              "min": 2,
+              "mean": 2,
+              "max": 2
+            },
+            {
+              "date": "2026-11-11",
+              "count": 1,
+              "min": 2,
+              "mean": 2,
+              "max": 2
+            },
+            {
+              "date": "2026-11-12",
+              "count": 1,
+              "min": 5,
+              "mean": 5,
+              "max": 5
+            },
+            {
+              "date": "2026-11-13",
+              "count": 1,
+              "min": 3,
+              "mean": 3,
+              "max": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "insights": []
+}

@@ -1,0 +1,2087 @@
+{
+  "schemaVersion": "1.0",
+  "seedVersion": "1.0.0",
+  "generatedAt": "2026-11-13T12:00:00Z",
+  "label": "SYNTHETIC DEMO DATA – NOT REAL ASTRONAUT DATA",
+  "astronautId": "demo-astronaut-01",
+  "environment": "iss",
+  "days": 14,
+  "endDate": "2026-11-13",
+  "rngSeed": 20261113,
+  "measurements": [
+    {
+      "schemaVersion": "1.0",
+      "id": "4dba7f59-3936-528b-b1b1-86aa51fd641c",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 68
+      },
+      "measuredAt": "2026-10-31T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-10-31T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "8143e73f-466f-5e37-b78d-e9188b75e6f4",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 66
+      },
+      "measuredAt": "2026-10-31T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-10-31T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "6efee25e-d131-5144-8c7c-d2f7cee46e88",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 68
+      },
+      "measuredAt": "2026-10-31T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-10-31T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "d4e14a0d-b5ae-5c6f-bfc4-8506845c4b82",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 116,
+        "diastolic": 72
+      },
+      "measuredAt": "2026-10-31T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-10-31T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "8de0e5a9-6c8a-5246-9d09-4cf166c0ef58",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 118,
+        "diastolic": 73
+      },
+      "measuredAt": "2026-10-31T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-10-31T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "3f0b761b-eccd-5db2-ab45-4c930776ec5b",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-10-31T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-10-31T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "9b7b9163-709f-546f-8db6-98c5ebc96a10",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 97
+      },
+      "measuredAt": "2026-10-31T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-10-31T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "96b8618b-7e6e-504a-888b-15237b563bee",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.4
+      },
+      "measuredAt": "2026-10-31T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-10-31T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "de5a9455-85c1-5505-95c7-0396d2ef95e0",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 7.6,
+        "quality": 5
+      },
+      "measuredAt": "2026-10-31T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-10-31T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "18d865fa-f855-5a4a-82f7-4c72110bb9ef",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 67
+      },
+      "measuredAt": "2026-11-01T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-01T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "84705d81-79c7-5b3b-b75a-4d99aa0a4a16",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 75
+      },
+      "measuredAt": "2026-11-01T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-01T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "64c51c77-982e-590c-a792-e6b70e3e912e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 70
+      },
+      "measuredAt": "2026-11-01T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-01T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "cec5fb51-0ffb-5768-9926-b7d08a2332b5",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 111,
+        "diastolic": 76
+      },
+      "measuredAt": "2026-11-01T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-01T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "b819736b-8dcc-5486-b200-2af8a4e42b34",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 125,
+        "diastolic": 79
+      },
+      "measuredAt": "2026-11-01T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-01T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "b36feba9-4356-59d0-99ec-fdd556dca994",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 97
+      },
+      "measuredAt": "2026-11-01T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-01T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "03447c11-24c0-579a-9703-2fd047204806",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-11-01T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-01T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "6236b266-110c-5f73-8e08-68035bd3185e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.7
+      },
+      "measuredAt": "2026-11-01T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-01T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "826e7e63-8bde-5bc5-af04-c06b675253e9",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 8.3,
+        "quality": 4
+      },
+      "measuredAt": "2026-11-01T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-01T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "c0f14be3-c7f4-5ab1-b4a4-ad6583e141c5",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 74
+      },
+      "measuredAt": "2026-11-02T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-02T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "cceeaaac-aa44-5366-bbc7-8048353648dc",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 77
+      },
+      "measuredAt": "2026-11-02T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-02T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "917b9f8a-8696-5917-8867-f241a4e65a44",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 72
+      },
+      "measuredAt": "2026-11-02T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-02T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "8dd6fbf4-404b-5c97-a611-6604d4421212",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 115,
+        "diastolic": 72
+      },
+      "measuredAt": "2026-11-02T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-02T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "a22cee6b-1bce-5819-8972-ecef370f8705",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 118,
+        "diastolic": 78
+      },
+      "measuredAt": "2026-11-02T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-02T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "961b18e0-5174-5be4-ba67-980349f5ed3e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 98
+      },
+      "measuredAt": "2026-11-02T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-02T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "6401a112-9771-5248-b9bb-91f42005db2b",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-11-02T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-02T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "bc3408b9-5503-550f-b4e4-14ec41abc44a",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.8
+      },
+      "measuredAt": "2026-11-02T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-02T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "f153197b-78f3-51ab-8b98-8612dc8634ca",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 7.2,
+        "quality": 3
+      },
+      "measuredAt": "2026-11-02T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-02T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "32437df8-f9b9-5ab4-a767-610d39f01e3a",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 67
+      },
+      "measuredAt": "2026-11-03T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-03T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "2cff5485-cf42-591b-93af-524ca9111d4c",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 71
+      },
+      "measuredAt": "2026-11-03T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-03T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "7d6dd423-ab1a-5dcc-ad8a-94692f54e664",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 73
+      },
+      "measuredAt": "2026-11-03T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-03T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "33988192-ff22-527e-bc78-7462900c827d",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 123,
+        "diastolic": 78
+      },
+      "measuredAt": "2026-11-03T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-03T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "2efd6ee9-d49c-59b1-bc2c-bb58f833f73c",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 115,
+        "diastolic": 78
+      },
+      "measuredAt": "2026-11-03T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-03T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "b07a7b99-e5d5-5fcb-b09a-d8e5f806c134",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 98
+      },
+      "measuredAt": "2026-11-03T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-03T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "87212c30-5da1-5a48-af7e-e2187cb6b38e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-11-03T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-03T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "790910b9-68e0-5c77-b0b0-c90f5ccc1264",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.4
+      },
+      "measuredAt": "2026-11-03T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-03T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "a7a7de46-459c-5c86-b433-5bcf7c98edfa",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 7.7,
+        "quality": 5
+      },
+      "measuredAt": "2026-11-03T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-03T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "54635326-bfb0-5b84-8c33-239a6447f42b",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 72
+      },
+      "measuredAt": "2026-11-04T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-04T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "e105bf4f-ac26-5bc6-b4a1-a5078452d1dc",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 71
+      },
+      "measuredAt": "2026-11-04T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-04T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "5024b098-af4f-5036-a8bf-9121955247cd",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 74
+      },
+      "measuredAt": "2026-11-04T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-04T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "85878972-5006-5b38-bfc4-2b38beb8c1fb",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 118,
+        "diastolic": 73
+      },
+      "measuredAt": "2026-11-04T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-04T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "d2059797-ac94-5491-b3a0-1e72856c67a8",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 115,
+        "diastolic": 76
+      },
+      "measuredAt": "2026-11-04T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-04T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "72b3f5f1-826c-5448-b9dd-526cb27abec7",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 97
+      },
+      "measuredAt": "2026-11-04T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-04T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "6459f051-a8f9-5052-a8ed-b60d80f95cd8",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 97
+      },
+      "measuredAt": "2026-11-04T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-04T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "ac027ac3-cc08-50c5-b33e-01406af46568",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.8
+      },
+      "measuredAt": "2026-11-04T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-04T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "4a4d5923-0760-5b0a-b340-489926c6e41f",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 8.1,
+        "quality": 5
+      },
+      "measuredAt": "2026-11-04T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-04T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "ad8f72a0-1844-576b-8cde-072c75385d8a",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 76
+      },
+      "measuredAt": "2026-11-05T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-05T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "3605b0af-ff50-5545-bb0d-ce282ed22a98",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 68
+      },
+      "measuredAt": "2026-11-05T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-05T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "40fdb693-bb45-52a5-8a35-a80cb8aff8bb",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 67
+      },
+      "measuredAt": "2026-11-05T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-05T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "c69e0d10-827d-5a2f-9c51-51face155c27",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 118,
+        "diastolic": 77
+      },
+      "measuredAt": "2026-11-05T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-05T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "cd9d896f-e5ac-531f-880a-e044086a4585",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 113,
+        "diastolic": 80
+      },
+      "measuredAt": "2026-11-05T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-05T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "3b99504c-3096-56ad-8cca-1d50766b69e4",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 97
+      },
+      "measuredAt": "2026-11-05T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-05T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "46fa5b90-1c0d-5240-8a01-0be93d9cc4ea",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 98
+      },
+      "measuredAt": "2026-11-05T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-05T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "e0f3397c-f671-51e3-bea2-893f719137ec",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.6
+      },
+      "measuredAt": "2026-11-05T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-05T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "5ed51b0a-d444-5103-bdec-6b255ef8ad1f",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 7.4,
+        "quality": 4
+      },
+      "measuredAt": "2026-11-05T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-05T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "4f9351ec-df88-5546-badc-23bd6351ce2e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 71
+      },
+      "measuredAt": "2026-11-06T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-06T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "85ef61bc-67a0-52ff-be6d-12f625486447",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 67
+      },
+      "measuredAt": "2026-11-06T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-06T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "9a49ac2c-b053-5ec6-b0cd-47d14bacebd3",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 75
+      },
+      "measuredAt": "2026-11-06T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-06T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "5fa760cb-7c85-5b87-9665-1e2659dd32ac",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 123,
+        "diastolic": 73
+      },
+      "measuredAt": "2026-11-06T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-06T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "d0f902b2-6251-5a96-8554-febc835007c1",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 119,
+        "diastolic": 74
+      },
+      "measuredAt": "2026-11-06T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-06T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "d016dfd0-c326-55e0-98cd-60835e4e3777",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-11-06T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-06T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "6acbcf35-1b0f-59df-a1cb-d5dcd7cff069",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 97
+      },
+      "measuredAt": "2026-11-06T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-06T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "6b74ca3d-ef0f-56dc-92db-81499f9c3220",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.8
+      },
+      "measuredAt": "2026-11-06T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-06T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "d3252c1f-3336-55d8-844d-87baf7757d6e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 7.7,
+        "quality": 5
+      },
+      "measuredAt": "2026-11-06T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-06T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "c24d17f7-b7f6-53c7-9969-2cd1ccae6350",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 77
+      },
+      "measuredAt": "2026-11-07T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-07T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "b5b2cf50-30cd-58f8-b667-2e598f3340e8",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 75
+      },
+      "measuredAt": "2026-11-07T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-07T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "10455bc5-06f9-5425-888d-28cf874cd4dd",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 77
+      },
+      "measuredAt": "2026-11-07T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-07T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "9dfddcce-b500-5cd0-84f2-1bd9fd4a4a8a",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 112,
+        "diastolic": 74
+      },
+      "measuredAt": "2026-11-07T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-07T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "80a0be76-63cf-568d-aeb5-5afd075b4b3e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 124,
+        "diastolic": 72
+      },
+      "measuredAt": "2026-11-07T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-07T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "25058395-84cf-58c1-aaba-0820d8be3bba",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-11-07T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-07T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "4fa8cc14-d0c0-5fb1-a82f-73c0cc4faf7e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-11-07T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-07T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "7c340905-4f9c-542b-84e4-fe0e201af5e9",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.7
+      },
+      "measuredAt": "2026-11-07T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-07T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "048d6a33-58c4-5510-ae1f-65b5053ff8d0",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 7.9,
+        "quality": 3
+      },
+      "measuredAt": "2026-11-07T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-07T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "063433e2-db9e-5c71-874b-cae199a23036",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 68
+      },
+      "measuredAt": "2026-11-08T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-08T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "d515c4d7-3505-5e84-b938-afd26b972bbc",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 72
+      },
+      "measuredAt": "2026-11-08T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-08T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "6d105575-6442-52ee-add6-8665433013a3",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 75
+      },
+      "measuredAt": "2026-11-08T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-08T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "335ebf64-1b20-5522-9dcf-07223f2abead",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 121,
+        "diastolic": 74
+      },
+      "measuredAt": "2026-11-08T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-08T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "35a8557a-8535-55e9-a161-6e43daed0018",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 123,
+        "diastolic": 80
+      },
+      "measuredAt": "2026-11-08T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-08T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "810f77b1-16a3-59aa-9743-0b6928e11c66",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 97
+      },
+      "measuredAt": "2026-11-08T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-08T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "c164abad-365c-511d-9b81-77be9a3c2e6d",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 98
+      },
+      "measuredAt": "2026-11-08T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-08T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "2798f8e5-ed6c-5318-8d15-ed99835ac342",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.6
+      },
+      "measuredAt": "2026-11-08T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-08T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "ca3ecffb-4ada-5f07-929a-4751d37529db",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 8.3,
+        "quality": 5
+      },
+      "measuredAt": "2026-11-08T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-08T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "ea0f5970-2a43-59af-92ca-eb8c8006a03a",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 74
+      },
+      "measuredAt": "2026-11-09T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-09T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "c0d544d0-442b-5ba4-84c9-50b6e3e96657",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 70
+      },
+      "measuredAt": "2026-11-09T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-09T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "d51af673-53cf-571f-8719-6a782b97a767",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 66
+      },
+      "measuredAt": "2026-11-09T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-09T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "b50cb2f1-22e0-52d7-ad61-56500c0fda2a",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 122,
+        "diastolic": 81
+      },
+      "measuredAt": "2026-11-09T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-09T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "2d5b497b-2e89-5ef3-8f60-f7b74dee4bd9",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 114,
+        "diastolic": 78
+      },
+      "measuredAt": "2026-11-09T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-09T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "b0993684-286f-5b61-b143-b66a02ebe8c9",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 98
+      },
+      "measuredAt": "2026-11-09T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-09T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "8c3aa52a-ecc2-56a8-8ab2-086c3eebd3f4",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-11-09T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-09T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "e71fb030-2166-52cd-97aa-09e750ef59d3",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.6
+      },
+      "measuredAt": "2026-11-09T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-09T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "ae2a7a68-ff9d-51c6-92ab-0599efb5693c",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 7.1,
+        "quality": 4
+      },
+      "measuredAt": "2026-11-09T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-09T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "d89f6eff-3500-5eb6-8260-ffda0f1ef405",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 67
+      },
+      "measuredAt": "2026-11-10T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-10T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "63234947-2996-597d-a407-866e2e80e639",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 72
+      },
+      "measuredAt": "2026-11-10T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-10T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "34cb3118-67dc-5d44-ae87-faa4c7df2df5",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 69
+      },
+      "measuredAt": "2026-11-10T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-10T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "bde7dd3b-e782-5628-856d-c1691f438644",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 123,
+        "diastolic": 74
+      },
+      "measuredAt": "2026-11-10T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-10T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "270bfd37-efcf-56e2-99ad-a2d45bf1805a",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 113,
+        "diastolic": 80
+      },
+      "measuredAt": "2026-11-10T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-10T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "02a576ec-d25b-5c88-95eb-52ac86eef2a1",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 98
+      },
+      "measuredAt": "2026-11-10T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-10T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "892a96e5-faca-50ce-9ba1-d0bd25a97d2e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 97
+      },
+      "measuredAt": "2026-11-10T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-10T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "3b63f248-b69d-5cb1-927f-717837c9a222",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.8
+      },
+      "measuredAt": "2026-11-10T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-10T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "bc0a9721-e56c-53db-a26e-c83f3c208ca0",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 5.0,
+        "quality": 2
+      },
+      "measuredAt": "2026-11-10T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-10T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "85e5ce5b-0c9d-5b30-b72c-9470982be294",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 69
+      },
+      "measuredAt": "2026-11-11T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-11T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "b64b2d17-c80e-5a19-9efa-fc3ec6574da3",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 67
+      },
+      "measuredAt": "2026-11-11T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-11T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "696a9478-669a-5431-9e69-5dd55f9a42ea",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 71
+      },
+      "measuredAt": "2026-11-11T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-11T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "e0d9064e-4124-51f5-84f3-51450d67645e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 122,
+        "diastolic": 75
+      },
+      "measuredAt": "2026-11-11T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-11T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "0ff9cb15-4396-552c-a2e3-ab1170d20775",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 119,
+        "diastolic": 74
+      },
+      "measuredAt": "2026-11-11T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-11T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "8c43b039-8f12-57d9-a01f-14f2779883f5",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-11-11T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-11T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "8d2f556f-d04c-560d-8905-92e3dc4d89fa",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 98
+      },
+      "measuredAt": "2026-11-11T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-11T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "b3d32c33-ebd7-5c0e-b2fd-f6f9693bface",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.5
+      },
+      "measuredAt": "2026-11-11T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-11T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "71130aa2-7e64-54f9-a14d-c26c3b052eb1",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 5.4,
+        "quality": 2
+      },
+      "measuredAt": "2026-11-11T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-11T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "940f6685-eb61-5bcf-a3b7-32ae65452bf1",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 79
+      },
+      "measuredAt": "2026-11-12T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-12T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "057d389b-bf0d-597f-8c08-30dddca8e039",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 84
+      },
+      "measuredAt": "2026-11-12T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-12T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "3cd1fd81-cbb8-521c-aa3a-e70509a78b88",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 81
+      },
+      "measuredAt": "2026-11-12T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-12T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "955cb04c-cda2-572b-adae-0e6da843138e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 111,
+        "diastolic": 76
+      },
+      "measuredAt": "2026-11-12T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-12T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "66399bdc-11af-52cb-ac8a-31ef6b93e9b0",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 124,
+        "diastolic": 73
+      },
+      "measuredAt": "2026-11-12T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-12T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "5f42d812-9770-5352-a5d0-172af64b5451",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-11-12T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-12T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "fecf1f68-6a14-5dd5-aca0-01e69da5ece7",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 97
+      },
+      "measuredAt": "2026-11-12T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-12T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "94dbce9b-79be-5c87-80bc-4c095b4541b2",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.9
+      },
+      "measuredAt": "2026-11-12T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-12T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "58d218d2-32b3-5779-bddb-53eda9df8e68",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 8.4,
+        "quality": 5
+      },
+      "measuredAt": "2026-11-12T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-12T06:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "374c3461-ba66-537f-a1fc-dde934589863",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 76
+      },
+      "measuredAt": "2026-11-13T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-13T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "09ef3e77-c64a-5699-8643-154a59b44fc5",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 71
+      },
+      "measuredAt": "2026-11-13T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-13T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "ae6a40cf-fdf7-571e-aa68-054ce7e07df7",
+      "astronautId": "demo-astronaut-01",
+      "metric": "heart_rate",
+      "values": {
+        "bpm": 73
+      },
+      "measuredAt": "2026-11-13T17:19:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-13T17:19:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "3b73dc41-51fa-56de-9962-be382c998ea4",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 115,
+        "diastolic": 75
+      },
+      "measuredAt": "2026-11-13T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-13T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "9d5d8a64-41aa-5795-a6f8-c1572b7fbb14",
+      "astronautId": "demo-astronaut-01",
+      "metric": "blood_pressure",
+      "values": {
+        "systolic": 119,
+        "diastolic": 80
+      },
+      "measuredAt": "2026-11-13T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-13T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "c0117683-06f6-54ad-b4b3-97accf507b33",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 99
+      },
+      "measuredAt": "2026-11-13T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-13T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "cd736724-756f-5a14-afb2-98f600438cf3",
+      "astronautId": "demo-astronaut-01",
+      "metric": "spo2",
+      "values": {
+        "percent": 93
+      },
+      "measuredAt": "2026-11-13T12:17:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-13T12:17:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "b06dc63d-31d7-5f64-9ed9-2fdfc63ff63e",
+      "astronautId": "demo-astronaut-01",
+      "metric": "temperature",
+      "values": {
+        "celsius": 36.5
+      },
+      "measuredAt": "2026-11-13T07:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-13T07:15:00Z"
+    },
+    {
+      "schemaVersion": "1.0",
+      "id": "505d13cd-4a2c-5257-b61f-06c9fb09c33f",
+      "astronautId": "demo-astronaut-01",
+      "metric": "sleep",
+      "values": {
+        "hours": 8.0,
+        "quality": 3
+      },
+      "measuredAt": "2026-11-13T06:15:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "note": "Synthetic demonstration reading",
+      "createdAt": "2026-11-13T06:15:00Z"
+    }
+  ],
+  "symptomCheckins": [
+    {
+      "schemaVersion": "1.0",
+      "id": "9fd46ccc-d519-5ba5-a990-651f60bf331c",
+      "astronautId": "demo-astronaut-01",
+      "symptoms": [
+        "dizziness"
+      ],
+      "checkedAt": "2026-11-13T17:00:00Z",
+      "utcOffsetMinutes": 0,
+      "environment": "iss",
+      "source": "synthetic",
+      "isSynthetic": true,
+      "createdAt": "2026-11-13T17:00:00Z"
+    }
+  ]
+}

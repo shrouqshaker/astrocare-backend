@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astrocare.dev/schemas/guide.schema.json",
+  "title": "GuideSet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "guideSetVersion",
+    "locale",
+    "generatedFromRuleSetVersion",
+    "guides"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "$ref": "common.schema.json#/$defs/schemaVersion"
+    },
+    "guideSetVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "locale": {
+      "enum": [
+        "en",
+        "ar"
+      ]
+    },
+    "generatedFromRuleSetVersion": {
+      "$ref": "common.schema.json#/$defs/semver"
+    },
+    "guides": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "$ref": "#/$defs/guide"
+      }
+    }
+  },
+  "$defs": {
+    "guide": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "metric",
+        "title",
+        "deviceIllustration",
+        "howToMeasure",
+        "whyItMatters",
+        "referenceRange",
+        "whatToDoIfAbnormal",
+        "sources",
+        "disclaimer"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^guide-[a-z0-9_]+$"
+        },
+        "metric": {
+          "$ref": "common.schema.json#/$defs/metric"
+        },
+        "title": {
+          "type": "string"
+        },
+        "deviceIllustration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetName",
+            "altText"
+          ],
+          "properties": {
+            "assetName": {
+              "type": "string",
+              "pattern": "^guide_[a-z0-9_]+$"
+            },
+            "altText": {
+              "type": "string"
+            }
+          }
+        },
+        "howToMeasure": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "steps"
+          ],
+          "properties": {
+            "steps": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 8,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "whyItMatters": {
+          "type": "string",
+          "minLength": 20
+        },
+        "referenceRange": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "summary",
+            "rows"
+          ],
+          "properties": {
+            "summary": {
+              "type": "string"
+            },
+            "rows": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "field",
+                  "label",
+                  "low",
+                  "high",
+                  "unit"
+                ],
+                "properties": {
+                  "field": {
+                    "$ref": "common.schema.json#/$defs/fieldKey"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "low": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "high": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "unit": {
+                    "$ref": "common.schema.json#/$defs/unit"
+                  }
+                }
+              }
+            },
+            "note": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "whatToDoIfAbnormal": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "warning",
+            "critical"
+          ],
+          "properties": {
+            "warning": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
+            "critical": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "title",
+              "url",
+              "verified"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "verified": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "disclaimer": {
+          "$ref": "common.schema.json#/$defs/disclaimer"
+        }
+      }
+    }
+  }
+}

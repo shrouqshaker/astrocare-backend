@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "id": "4dba7f59-3936-528b-b1b1-86aa51fd641c",
+  "astronautId": "demo-astronaut-01",
+  "metric": "heart_rate",
+  "values": {
+    "bpm": 68
+  },
+  "measuredAt": "2026-10-31T07:15:00Z",
+  "utcOffsetMinutes": 0,
+  "environment": "iss",
+  "source": "synthetic",
+  "isSynthetic": true,
+  "note": "Synthetic demonstration reading",
+  "createdAt": "2026-10-31T07:15:00Z"
+}

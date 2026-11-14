@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0",
+  "id": "9fd46ccc-d519-5ba5-a990-651f60bf331c",
+  "astronautId": "demo-astronaut-01",
+  "symptoms": [
+    "dizziness"
+  ],
+  "checkedAt": "2026-11-13T17:00:00Z",
+  "utcOffsetMinutes": 0,
+  "environment": "iss",
+  "source": "synthetic",
+  "isSynthetic": true,
+  "createdAt": "2026-11-13T17:00:00Z"
+}

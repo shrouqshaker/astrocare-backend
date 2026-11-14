@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0",
+  "id": "5433a327-9120-4c25-bfa7-f7a2b579b9e9",
+  "astronautId": "demo-astronaut-01",
+  "createdAt": "2026-11-13T12:17:00Z",
+  "level": "warning",
+  "category": "vital",
+  "ruleId": "SPO2-LOW-W",
+  "ruleRevision": 1,
+  "ruleSetVersion": "1.0.0",
+  "title": "Low blood oxygen",
+  "explanation": "Synthetic demonstration: SpO2 is 93% compared with an illustrative 95% threshold; this is not a diagnosis.",
+  "evidence": [
+    {
+      "field": "spo2.percent",
+      "observed": 93,
+      "unit": "percent",
+      "comparator": "<",
+      "threshold": 95,
+      "observedAt": "2026-11-13T12:17:00Z",
+      "measurementId": "cd736724-756f-5a14-afb2-98f600438cf3",
+      "symptomCheckinId": null
+    }
+  ],
+  "recommendedAction": "Check the measurement technique and context if safe, and follow the mission health-monitoring protocol; report persistent concerns or symptoms.",
+  "disclaimer": "AstroCare provides general decision support only. It does not diagnose or treat any condition and does not replace a flight surgeon or qualified medical professional.",
+  "source": {
+    "ref": "SRC-VITALS-GENERAL",
+    "title": "Unverified illustrative physiological thresholds; not astronaut clinical limits",
+    "url": null
+  },
+  "triggeredBy": {
+    "measurementIds": [
+      "cd736724-756f-5a14-afb2-98f600438cf3"
+    ],
+    "symptomCheckinIds": []
+  },
+  "emergencyProtocolId": null,
+  "acknowledgedAt": null,
+  "isSynthetic": true
+}
