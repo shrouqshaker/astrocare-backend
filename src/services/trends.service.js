@@ -1,7 +1,15 @@
-const { compare, stableUuid } = require('./rules.service');
+const { compare, stableUuid, formatUtc } = require('./rules.service');
 const DAY = 86400000;
 const mean = numbers => numbers.length ? numbers.reduce((sum, value) => sum + value, 0) / numbers.length : null;
-const round = value => value === null ? null : Math.round((value + Number.EPSILON) * 100) / 100;
+// Match Python's round2: shortest double representation, ROUND_HALF_UP.
+const round = value => {
+  if (value === null || value === undefined || Number.isNaN(value)) return null;
+  const sign = value < 0 ? -1 : 1;
+  const [mantissa, exponent = '0'] = Math.abs(value).toString().split('e');
+  const shifted = Number(`${mantissa}e${Number(exponent) + 2}`);
+  const result = sign * (Math.round(shifted) / 100);
+  return Object.is(result, -0) ? 0 : result;
+};
 const sampleSd = numbers => numbers.length < 2 ? null : Math.sqrt(numbers.reduce((sum, value) => sum + (value - mean(numbers)) ** 2, 0) / (numbers.length - 1));
 const localDay = (instant, offset) => new Date(Date.parse(instant) + offset * 60000).toISOString().slice(0, 10);
 
@@ -10,7 +18,7 @@ function buildTrendReport(astronautId, measurements, offset, now, contracts) {
   const policy = rules.trendPolicy;
   const endDay = localDay(now.toISOString(), offset);
   const days = Array.from({ length: 7 }, (_, index) => new Date(Date.parse(`${endDay}T00:00:00Z`) - (6 - index) * DAY).toISOString().slice(0, 10));
-  const report = { schemaVersion: '1.0', astronautId, generatedAt: now.toISOString(), generatedBy: 'backend_optional', ruleSetVersion: rules.ruleSetVersion, window: { from: days[0], to: endDay, days: 7, utcOffsetMinutes: offset }, metrics: [], insights: [] };
+  const report = { schemaVersion: '1.0', astronautId, generatedAt: formatUtc(now), generatedBy: 'backend_optional', ruleSetVersion: rules.ruleSetVersion, window: { from: days[0], to: endDay, days: 7, utcOffsetMinutes: offset }, metrics: [], insights: [] };
   const rawFields = new Map();
   for (const [metric, definition] of Object.entries(contracts.enums.metrics)) {
     const records = measurements.filter(record => record.metric === metric && Date.parse(record.measuredAt) <= now.getTime()).sort((a, b) => Date.parse(a.measuredAt) - Date.parse(b.measuredAt) || a.id.localeCompare(b.id));
@@ -54,14 +62,14 @@ function buildTrendReport(astronautId, measurements, offset, now, contracts) {
       const scale = Math.max(data.baselineSd, rule.sdFloor);
       const zScore = (data.latest - data.baselineMean) / scale;
       if (Math.abs(zScore) < rule.zThreshold) continue;
-      evidence = [{ field: rule.field, observed: data.latest, unit: data.unit, comparator: zScore >= 0 ? '>=' : '<=', threshold: round(data.baselineMean + Math.sign(zScore) * rule.zThreshold * scale), observedAt: data.latestRecord.measuredAt, measurementId: data.latestRecord.id, baselineMean: round(data.baselineMean), baselineSd: round(data.baselineSd), zScore: round(zScore) }];
+      evidence = [{ field: rule.field, observed: data.latest, unit: data.unit, comparator: zScore > 0 ? '>' : '<', threshold: round(data.baselineMean + Math.sign(zScore) * rule.zThreshold * scale), observedAt: data.latestRecord.measuredAt, measurementId: data.latestRecord.id, baselineMean: round(data.baselineMean), baselineSd: round(data.baselineSd), zScore: round(zScore) }];
     } else if (rule.type === 'window_average') {
       const last = data.records.slice(-rule.lastN);
       const average = mean(last.map(record => record.values[data.key]));
       if (last.length < rule.lastN || !compare(average, rule.op, rule.value)) continue;
       evidence = last.map(record => ({ field: rule.field, observed: record.values[data.key], unit: data.unit, comparator: rule.op, threshold: rule.value, observedAt: record.measuredAt, measurementId: record.id }));
     } else continue;
-    report.insights.push({ id: stableUuid(`${astronautId}:${rule.id}:${evidence.map(entry => entry.measurementId).join(',')}`), ruleId: rule.id, ruleRevision: rule.revision, severity: rule.severity, metric: rule.metrics[0], text: rule.text, evidence, generatedAt: report.generatedAt });
+    report.insights.push({ id: stableUuid(`insight|${astronautId}|${rule.id}|${evidence[0].observedAt}`), ruleId: rule.id, ruleRevision: rule.revision, severity: rule.severity, metric: rule.metrics[0], text: rule.text, evidence, generatedAt: report.generatedAt });
   }
   if (!contracts.validators['trend-report.schema.json'](report)) throw new Error('Generated trend report violates shared schema');
   return report;

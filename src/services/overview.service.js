@@ -1,4 +1,5 @@
 const { evaluateRules, makeAlert } = require('./rules.service');
+const { buildContext } = require('./context.service');
 function createOverviewService({ models, historyService, contracts, clock }) {
   async function getOverview(astronautId) {
     const now = clock().toISOString();
@@ -8,11 +9,8 @@ function createOverviewService({ models, historyService, contracts, clock }) {
       models.Measurement.countDocuments({ astronautId }), models.SymptomCheckin.countDocuments({ astronautId }), models.Alert.countDocuments({ astronautId }),
     ]);
     const rules = contracts.assets.rules.data;
-    const cutoff = Date.parse(now) - rules.evaluation.contextWindowMinutes * 60000;
-    const records = Object.fromEntries(latestMeasurements.filter(record => Date.parse(record.measuredAt) >= cutoff).map(record => [record.metric, record]));
     const latestSymptomCheckin = symptomHistory.items[0] || null;
-    const symptomRecord = latestSymptomCheckin && Date.parse(latestSymptomCheckin.checkedAt) >= cutoff ? latestSymptomCheckin : null;
-    const context = { records, measurements: Object.fromEntries(Object.values(records).flatMap(record => Object.entries(record.values).map(([key, value]) => [`${record.metric}.${key}`, value]))), symptoms: symptomRecord?.symptoms || [], symptomRecord };
+    const { context } = buildContext(latestMeasurements, latestSymptomCheckin, rules, now);
     const evaluation = evaluateRules(context, rules, contracts.enums, now);
     const currentAlerts = evaluation.matches.map(match => makeAlert(match, astronautId, context, rules, contracts.enums, now));
     for (const alert of currentAlerts) if (!contracts.validators['alert.schema.json'](alert)) throw new Error('Generated overview alert violates shared schema');

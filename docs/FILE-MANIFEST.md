@@ -32,6 +32,7 @@ src/services/history.service.js
 src/services/seed.service.js
 src/services/rules.service.js
 src/services/trends.service.js
+src/services/context.service.js
 src/services/overview.service.js
 src/middleware/security.js
 src/middleware/error-handler.js
@@ -42,6 +43,9 @@ test/helpers.js
 test/contracts.test.js
 test/analytics.test.js
 test/integration.test.js
+test/reference-parity.test.js
+test/fixtures/reference-parity.v1.json
+docs/AI-DATA-INTEGRATION.md
 docs/BACKEND-DECISIONS.md
 docs/FILE-MANIFEST.md
 docs/contracts-sha256.json
